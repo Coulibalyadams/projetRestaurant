@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container-fluid" id="app">
+
+    <div class="card">
+      <div class="card-body">
+        <div class="row">
+          <nav class="navbar navbar-light bg-light">
+            <form class="form-inline">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" v-model="name">
+              <button class="btn btn-outline-success my-2 my-sm-0" v-on:click="rechercher" type="button">Search</button>
+            </form>
+          </nav>
+        </div>
+
+        <div class="row">
+          <div>
+
+            <table class="table">
+              <thead>
+                <tr>
+                  <td> <strong> ID </strong> </td>
+
+                  <td> <strong> Nom</strong></td>
+
+                  <td> <strong> Cuisine</strong></td>
+                  <td> <strong> Address </strong></td>
+
+                  <td> <strong> Localite</strong></td>
+                  <td> <strong> Action</strong></td>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr v-for="restaurant in restaurants">
+
+
+                  <td><a class="btn btn-link" v-bind:href="linktodetail+restaurant.name">{{restaurant._id}}</a></td>
+
+                  <td>{{restaurant.name}}</td>
+
+                  <td>{{restaurant.cuisine}}</td>
+                  <td>{{restaurant.address.street}}</td>
+                  <td>{{restaurant.borough}}</td>
+                  <td>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#formulaire"
+                      v-on:click="select(restaurant)"> modifier</button>
+                    <button type="button" class="btn btn-danger btn-sm" v-on:click="supprimer(restaurant._id)">
+                      delete</button>
+
+                  </td>
+
+                </tr>
+
+
+              </tbody>
+            </table>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="modal fade" id="formulaire" v-if="restaurant">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Modifier les informations :</h4>
+            <button type="button" class="close" data-dismiss="modal">
+              <span>&times;</span>
+            </button>
+          </div>
+          <div class="modal-body row">
+            <form class="col">
+              <div class="form-group">
+                <label for="id" class="form-control-label">Id</label>
+                <input type="text" class="form-control" name="id" id="id" v-model="restaurant._id" disabled>
+              </div>
+              <div class="form-group">
+                <label for="nom" class="form-control-label">Nom</label>
+                <input type="text" class="form-control" name="nom" id="nom" placeholder="Votre nom"
+                  v-model="restaurant.name">
+              </div>
+              <div class="form-group">
+                <label for="cuisine" class="form-control-label">Cuisine</label>
+                <input type="text" class="form-control" name="cuisine" id="cuisine" placeholder="saisir le texte"
+                  v-model="restaurant.cuisine">
+              </div>
+              <div class="form-group">
+                <label for="adresse" class="form-control-label">Adresse</label>
+                <input type="text" class="form-control" name="adresse" id="adresse" placeholder="saisir le texte"
+                  v-model="restaurant.address.street">
+              </div>
+              <div class="form-group">
+                <label for="localite" class="form-control-label">Localité</label>
+                <input type="text" class="form-control" name="localite" id="localite" placeholder="saisir le texte"
+                  v-model="restaurant.borough">
+              </div>
+              <button type="submit" class="btn btn-primary pull-right" v-on:click="sauver">Enregistrer</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.0/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script type="text/javascript" src="./js/restaurant.js"></script>
+
+</body>
+
+</html>
