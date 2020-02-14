@@ -25,7 +25,6 @@ exports.findRestaurants = function(page, pagesize, callback) {
 			console.log("page = " + pagesize);
 			
 			
-
         if(!err){
 			var db = client.db(dbName);
 			db.collection('restaurants')
@@ -210,3 +209,5 @@ exports.findByName = function(name,callback){
 		}
 	})
 }
+
+

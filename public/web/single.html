@@ -29,6 +29,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- Custom-Files -->
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<!-- Bootstrap-Core-CSS -->
+	<link href="css/css_slider.css" type="text/css" rel="stylesheet" media="all">
+	<!-- css slider -->
 	<link href="css/single.css" rel='stylesheet' type='text/css' />
 	<!-- single page -->
 	<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
@@ -48,71 +50,62 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 
 <body>
+	<div id="app">
 	<!-- header -->
 	<header id="home">
-		<!-- top-bar -->
-		<div class="top-bar py-2 border-bottom">
-			<div class="container">
-				<div class="row middle-flex">
-					<div class="col-xl-7 col-md-5 top-social-agile mb-md-0 mb-1 text-lg-left text-center">
-						<div class="row">
-							<div class="col-xl-3 col-6 header-top_w3layouts">
-								<p class="text-da">
-									<span class="fa fa-map-marker mr-2"></span>Parma Via, Italy
-								</p>
-							</div>
-							<div class="col-xl-3 col-6 header-top_w3layouts">
-								<p class="text-da">
-									<span class="fa fa-phone mr-2"></span>+1 000263676
-								</p>
-							</div>
-							<div class="col-xl-6"></div>
-						</div>
-					</div>
-					<div class="col-xl-5 col-md-7 top-social-agile text-md-right text-center pr-sm-0 mt-md-0 mt-2">
+				<!-- top-bar -->
+				<div class="top-bar py-2 border-bottom">
+					<div class="container">
 						<div class="row middle-flex">
-							<div class="col-lg-5 col-4 top-w3layouts p-md-0 text-right">
-								<!-- login -->
-								<a href="login.html" class="btn login-button-2 text-uppercase text-wh">
-									<span class="fa fa-sign-in mr-2"></span>Login</a>
-								<!-- //login -->
+							<div class="col-xl-7 col-md-5 top-social-agile mb-md-0 mb-1 text-lg-left text-center">
+								<div class="row">
+									<div class="col-xl-3 col-6 header-top_w3layouts">
+										<p class="text-da">
+											<span class="fa fa-phone mr-2"></span>+225 78929619
+										</p>
+									</div>
+									<div class="col-xl-6"></div>
+								</div>
 							</div>
-							<div class="col-lg-7 col-8 social-grid-w3">
-								<!-- social icons -->
-								<ul class="top-right-info">
-									<li>
-										<p>Follow Us:</p>
-									</li>
-									<li class="facebook-w3">
-										<a href="#facebook">
-											<span class="fa fa-facebook-f"></span>
-										</a>
-									</li>
-									<li class="twitter-w3">
-										<a href="#twitter">
-											<span class="fa fa-twitter"></span>
-										</a>
-									</li>
-									<li class="google-w3">
-										<a href="#google">
-											<span class="fa fa-google-plus"></span>
-										</a>
-									</li>
-									<li class="dribble-w3">
-										<a href="#dribble">
-											<span class="fa fa-dribbble"></span>
-										</a>
-									</li>
-								</ul>
-								<!-- //social icons -->
+							<div class="col-xl-5 col-md-7 top-social-agile text-md-right text-center pr-sm-0 mt-md-0 mt-2">
+								<div class="row middle-flex">
+									<div class="col-lg-5 col-4 top-w3layouts p-md-0 text-right">
+										<!-- login -->
+										<a href="login.html" class="btn login-button-2 text-uppercase text-wh">
+											<span class="fa fa-sign-in mr-2"></span>Connexion</a>
+										<!-- //login -->
+									</div>
+									<div class="col-lg-7 col-8 social-grid-w3">
+										<!-- social icons -->
+										<ul class="top-right-info">
+											<li>
+												<p>Suivez-nous:</p>
+											</li>
+											<li class="facebook-w3">
+												<a href="#facebook">
+													<span class="fa fa-facebook-f"></span>
+												</a>
+											</li>
+											<li class="twitter-w3">
+												<a href="#twitter">
+													<span class="fa fa-twitter"></span>
+												</a>
+											</li>
+											<li class="google-w3">
+												<a href="#google">
+													<span class="fa fa-google-plus"></span>
+												</a>
+											</li>
+										</ul>
+										<!-- //social icons -->
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</header>
-	<!-- //top-bar -->
+			</header>
+			<!-- //top-bar -->
 
 	<!-- header 2 -->
 	<!-- navigation -->
@@ -122,7 +115,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<!-- logo -->
 				<h1>
 					<a id="logo" class="logo" href="index.html">
-						<img src="images/logo.png" alt="" class="img-fluid"><span>Tasty</span> Burger
+						<img src="images/logo.png" alt="" class="img-fluid"><span>Resto</span> Store
 					</a>
 				</h1>
 				<!-- //logo -->
@@ -132,8 +125,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<label for="drop" class="toggle">Menu</label>
 						<input type="checkbox" id="drop" />
 						<ul class="menu">
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About Us</a></li>
+							<li><a href="index.html">Accueil</a></li>
+							<li><a href="about.html">A propos de nous</a></li>
 							<li>
 								<!-- First Tier Drop Down -->
 								<label for="drop-3" class="toggle toogle-2">Pages <span class="fa fa-angle-down"
@@ -142,23 +135,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<a href="#pages">Pages <span class="fa fa-angle-down" aria-hidden="true"></span></a>
 								<input type="checkbox" id="drop-3" />
 								<ul>
-									<li><a class="drop-text" href="index.html">Services</a></li>
+									<li><a class="drop-text" href="#services">Services</a></li>
 									<li><a class="drop-text" href="about.html">Our Chefs</a></li>
-									<li><a class="drop-text" href="index.html">Blog</a></li>
+									<li><a class="drop-text" href="#blog">Blog</a></li>
 									<li><a class="drop-text" href="single.html">Single Page</a></li>
 									<li><a class="drop-text" href="login.html">Login</a></li>
 									<li><a class="drop-text" href="register.html">Register</a></li>
 								</ul>
 							</li>
-							<li><a href="menu.html">Menu</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
-							<li>
-								<!-- login -->
-								<a href="https://w3layouts.com/" target="_blank" class="dwn-button ml-lg-5">
-									<span class="fa fa-cloud-download mt-lg-0 mt-4" aria-hidden="true"></span>
-								</a>
-								<!-- //login -->
-							</li>
+							<li><a href="#">Tous les restaurants</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -186,11 +171,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!-- //page details -->
 
 	<!-- single page -->
-	<div class="single-page py-5">
+	<div class="single-page py-5"  v-for="restaurant in restaurants">
 		<div class="container py-xl-5 py-lg-3">
 			<div class="title-section text-center mb-md-5 mb-4">
 				<p class="w3ls-title-sub">Info</p>
-				<h3 class="w3ls-title">Single <span>Page</span></h3>
+				<h3 class="w3ls-title">Détails restaurant: <span>{{restaurant.name}}</span></h3>
 			</div>
 			<div class="inner-sec">
 				<div class="row">
@@ -199,9 +184,38 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="blog-grid-top">
 							<div class="b-grid-top">
 								<div class="blog_info_left_grid">
-									<a href="single.html">
-										<img src="images/single1.jpg" class="img-fluid" alt="">
-									</a>
+									
+										<!-- banner slider -->
+										<div class="csslider infinity" id="slider1">
+											<input type="radio" name="slides" checked="checked" id="slides_1" />
+											<input type="radio" name="slides" id="slides_2" />
+											<input type="radio" name="slides" id="slides_3" />
+											<ul class="banner_slide_bg">
+												<li>
+													<div class="banner-top1"></div>
+												</li>
+												<li>
+													<div class="banner-top2"></div>
+												</li>
+												<li>
+													<div class="banner-top3"></div>
+												</li>
+											</ul>
+											<div class="arrows">
+												<label for="slides_1"></label>
+												<label for="slides_2"></label>
+												<label for="slides_3"></label>
+											</div>
+											<div class="navigation">
+												<div>
+													<label for="slides_1"></label>
+													<label for="slides_2"></label>
+													<label for="slides_3"></label>
+												</div>
+											</div>
+										</div>
+										<!-- //banner slider -->
+									
 								</div>
 							</div>
 
@@ -217,64 +231,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								exea commodo consequat
 								duis
 								aute irudre dolor in elit sed uta labore dolore reprehender</p>
-							<p class="my-3">Ullamco labor nisi ut aliquip exea commodo consequat duis aute irudre dolor
-								in elit sed uta
-								labore dolore reprehender</p>
-							<p>Jabore et dolore magna aliqua uta enim ad minim ven iam quis nostrud exercitation ullamco
-								labor nisi ut
-								<span class="text-blog-single">aliquip exea commodo consequat duis aute irudre dolor in
-									elit
-									sed uta labore dolore
-									reprehender</span>
-							</p>
-							<div class="mt-sm-4 mt-3">
-								<p>Elit sedc dnmo eiusmod tempor incididunt ut labore et dolore magna aliqua uta enim ad
-									minim ven iam quis
-									nostrud
-									exercitation ullamco labor nisi ut aliquip exea commodo consequat duis aute irudre
-									dolor in elit sed uta
-									labore
-									dolore reprehender</p>
-								<p class="my-3">Ullamco labor nisi ut aliquip exea commodo consequat duis aute irudre
-									dolor in elit sed uta
-									labore dolore reprehender</p>
-								<p>Jabore et dolore magna aliqua uta enim ad minim ven iam quis nostrud exercitation
-									ullamco labor nisi ut
-									aliquip exea
-									<span class="text-blog-single">commodo consequat duis aute irudre dolor in elit sed
-										uta
-										labore dolore reprehender</span>
-								</p>
-							</div>
-							<h3>
-								<a href="single.html" class="single-text text-da font-weight-light">Nemo enim ipsam
-									voluptatem quia voluptas
-									sit aspernatur aut odit aut fugit 2019</a>
-							</h3>
-							<p class="my-3">Ullamco labor nisi ut aliquip exea commodo consequat duis aute irudre dolor
-								in elit sed uta
-								labore dolore reprehender</p>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor
-								incididunt ut labore et
-								dolore magna
-								aliqua uta enim ad minim ven iam quis nostrud exercitation ullamco labor nisi ut aliquip
-								exea commodo consequat
-								duis
-								aute irudre dolor in elit sed uta labore dolore reprehender</p>
 						</div>
 
 						<div class="comment-top">
-							<h4>Comments</h4>
-							<div class="media">
-								<img src="images/te3.jpg" alt="" class="img-fluid" />
-								<div class="media-body">
-									<h5 class="mt-0">Joseph Goh</h5>
-									<p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. id dignissim
-										sapien velit id felis ac
-										cursus eros.
-										Cras a ornare elit.</p>
-								</div>
-							</div>
+							<h4>Commentaires</h4>
+							
 							<div class="media mt-3">
 								<a class="d-flex pr-3" href="#">
 									<img src="images/te2.jpg" alt="" class="img-fluid" />
@@ -289,7 +250,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							</div>
 						</div>
 						<div class="comment-top">
-							<h4>Leave a Comment</h4>
+							<h4>Laisser un commentaire</h4>
 							<div class="comment-bottom">
 								<form action="#" method="post">
 									<div class="form-group">
@@ -317,78 +278,46 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<!-- right side -->
 					<aside class="col-lg-4 right-blog-con text-right mt-lg-0 mt-5">
 						<div class="right-blog-info text-left">
-							<div class="tech-btm">
-								<h4>Sign up to our newsletter</h4>
-								<p>Pellentesque dui, non felis. Maecenas male </p>
-								<form action="#" method="post">
-									<input class="form-control" name="email" type="email" placeholder="Email"
-										required="">
-									<input class="form-control" type="submit" value="Subscribe">
-								</form>
-							</div>
 							<div class="category-story tech-btm">
-								<h4>More Stories</h4>
+								<h4>Code: {{restaurant._id}} <hr> Nom: {{restaurant.name}} <br> Cuisine: {{restaurant.cuisine}} <br> Adresse: {{restaurant.address.street}} <br>Localité: {{restaurant.borough}}</h4>
 								<ul class="list-unstyled">
 									<li class="border-bottom mb-3 pb-3">
 										<i class="fa fa-angle-right mr-2"></i>
-										<a href="#" class="text-blog-single">sed do eiusmod tempor incididunt ut labore
-											et
-											dolore magna aliqua</a>
+										<a href="menu.html" class="text-blog-single" style="color:greenyellow;font-size:20px;font-style:italic;">Voir le menu <span class="fa fa-caret-right ml-1" aria-hidden="true"></span></a>
 									</li>
 									<li class="border-bottom mb-3 pb-3">
 										<i class="fa fa-angle-right mr-2"></i>
-										<a href="#" class="text-blog-single">sed do eiusmod tempor incididunt ut labore
-											et
-											dolore magna aliqua</a>
-									</li>
-									<li class="border-bottom mb-3 pb-3">
-										<i class="fa fa-angle-right mr-2"></i>
-										<a href="#" class="text-blog-single">sed do eiusmod tempor incididunt ut labore
-											et
-											dolore magna aliqua</a>
-									</li>
-									<li class="border-bottom mb-3 pb-3">
-										<i class="fa fa-angle-right mr-2"></i>
-										<a href="#" class="text-blog-single">sed do eiusmod tempor incididunt ut labore
-											et
-											dolore magna aliqua</a>
-									</li>
-									<li class="border-bottom mb-3 pb-3">
-										<i class="fa fa-angle-right mr-2"></i>
-										<a href="#" class="text-blog-single">sed do eiusmod tempor incididunt ut labore
-											et
-											dolore magna aliqua</a>
-									</li>
-									<li>
-										<i class="fa fa-angle-right mr-2"></i>
-										<a href="#" class="text-blog-single">sed do eiusmod tempor incididunt ut labore
-											et
-											dolore magna aliqua</a>
+										<a href="#" class="text-blog-single" style="color:yellow;font-size:20px;font-style:italic;">Itinéraire <span class="fa fa-caret-right ml-1" aria-hidden="true"></span></a>
 									</li>
 								</ul>
 							</div>
 							<div class="tech-btm">
-								<img src="images/blog1.jpg" class="img-fluid" alt="">
-							</div>
-							<div class="tech-btm">
-								<h4>Categories</h4>
+								<h4>Résumé des notes</h4>
 								<ul class="list-group single">
 									<li class="list-group-item d-flex justify-content-between align-items-center">
-										Cras justo odio
-										<span class="badge badge-primary badge-pill">14</span>
+										5 étoiles
+										<span class="badge badge-primary badge-pill">1</span>
 									</li>
 									<li class="list-group-item d-flex justify-content-between align-items-center">
-										Dapibus ac facilisis in
-										<span class="badge badge-primary badge-pill">2</span>
+										4 étoiles
+										<span class="badge badge-primary badge-pill">1</span>
 									</li>
 									<li class="list-group-item d-flex justify-content-between align-items-center">
-										Morbi leo risus
+										3 étoiles
+										<span class="badge badge-primary badge-pill">1</span>
+									</li>
+									<li class="list-group-item d-flex justify-content-between align-items-center">
+										2 étoiles
+										<span class="badge badge-primary badge-pill">1</span>
+									</li>
+									<li class="list-group-item d-flex justify-content-between align-items-center">
+										1 étoiles
 										<span class="badge badge-primary badge-pill">1</span>
 									</li>
 								</ul>
 							</div>
 							<div class="tech-btm">
-								<h4>Top stories of the week</h4>
+								<h4>Top Restaurants</h4>
 
 								<div class="blog-grids row mb-3">
 									<div class="col-md-5 blog-grid-left">
@@ -407,40 +336,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 										</div>
 									</div>
 								</div>
-								<div class="blog-grids row mb-2">
-									<div class="col-md-5 blog-grid-left">
-										<a href="single.html">
-											<img src="images/blog2.jpg" class="img-fluid" alt="">
-										</a>
-									</div>
-									<div class="col-md-7 blog-grid-right mt-3">
-										<h5>
-											<a href="single.html">Pellentesque dui, non felis. Maecenas male non felis
-											</a>
-										</h5>
-										<div class="sub-meta">
-											<span>
-												<i class="far fa-clock"></i> 20 Feb, 2018</span>
-										</div>
-									</div>
-								</div>
 							</div>
-							<div class="single-gd tech-btm">
-								<h4>Recent Post</h4>
-								<div class="blog-grids">
-									<div class="blog-grid-left">
-										<a href="single.html">
-											<img src="images/blog1.png" class="img-fluid" alt="">
-										</a>
-									</div>
-									<div class="blog-grid-right">
-										<h5 class="mt-0">
-											<a href="single.html">Pellentesque dui, non felis. Maecenas male</a>
-										</h5>
-									</div>
-									<div class="clearfix"> </div>
-								</div>
-							</div>
+							
 						</div>
 					</aside>
 					<!-- //right side -->
@@ -449,121 +346,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>
 	</div>
 	<!-- //single -->
-
-	<!-- footer -->
-	<footer class="py-5">
-		<div class="container py-xl-4">
-			<div class="row footer-top">
-				<div class="col-lg-4 footer-grid_section_1its footer-text">
-					<!-- logo -->
-					<h2>
-						<a class="logo text-wh" href="index.html">
-							<img src="images/logo.png" alt="" class="img-fluid"><span>Tasty</span> Burger
-						</a>
-					</h2>
-					<!-- //logo -->
-					<p class="mt-lg-4 mt-3 mb-lg-5 mb-4">Sed ut perspiciatis unde omnis iste natus errorhjhsit lupt
-						atem
-						accursit lupt atem accu
-						dfdsa
-						ntium doloremque laudan tium accu santium dolore.</p>
-					<!-- social icons -->
-					<ul class="top-right-info">
-						<li>
-							<p>Follow As:</p>
-						</li>
-						<li class="facebook-w3">
-							<a href="#facebbok">
-								<span class="fa fa-facebook-f"></span>
-							</a>
-						</li>
-						<li class="twitter-w3">
-							<a href="#twitter">
-								<span class="fa fa-twitter"></span>
-							</a>
-						</li>
-						<li class="google-w3">
-							<a href="#google">
-								<span class="fa fa-google-plus"></span>
-							</a>
-						</li>
-						<li class="dribble-w3">
-							<a href="#dribble">
-								<span class="fa fa-dribbble"></span>
-							</a>
-						</li>
-					</ul>
-					<!-- //social icons -->
-				</div>
-				<div class="col-lg-4 footer-grid_section_1its my-lg-0 my-sm-4 my-4">
-					<div class="footer-title">
-						<h3>Contact Us</h3>
-					</div>
-					<div class="footer-text mt-4">
-						<p>Address : 1234 lock, Charlotte, North Carolina, United States</p>
-						<p class="my-2">Phone : +12 534894364</p>
-						<p>Email : <a href="mailto:info@example.com">info@example.com</a></p>
-					</div>
-					<div class="footer-title mt-4 pt-md-2">
-						<h3>Payment Method</h3>
-					</div>
-					<ul class="list-unstyled payment-links mt-4">
-						<li>
-							<a href="login.html"><img src="images/pay2.png" alt=""></a>
-						</li>
-						<li>
-							<a href="login.html"><img src="images/pay5.png" alt=""></a>
-						</li>
-						<li>
-							<a href="login.html"><img src="images/pay1.png" alt=""></a>
-						</li>
-						<li>
-							<a href="login.html"><img src="images/pay4.png" alt=""></a>
-						</li>
-					</ul>
-				</div>
-				<div class="col-lg-4 footer-grid_section_1its">
-					<div class="footer-title">
-						<h3>Request Info</h3>
-					</div>
-					<div class="info-form-right mt-4 p-0">
-						<form action="#" method="post">
-							<div class="row">
-								<div class="col-lg-6 form-group mb-2 pr-lg-1">
-									<input type="text" class="form-control" name="Name" placeholder="Name" required="">
-								</div>
-								<div class="col-lg-6 form-group mb-2 pl-lg-1">
-									<input type="text" class="form-control" name="Phone" placeholder="Phone"
-										required="">
-								</div>
-							</div>
-							<div class="form-group mb-2">
-								<input type="email" class="form-control" name="Email" placeholder="Email" required="">
-							</div>
-							<div class="form-group mb-2">
-								<textarea name="Comment" class="form-control" placeholder="Comment"
-									required=""></textarea>
-							</div>
-							<button type="submit" class="btn submit-contact ml-auto">Submit</button>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- //footer -->
-	<!-- copyright -->
-	<div class="cpy-right text-center py-3">
-		<p>© 2019 Tasty Burger. All rights reserved | Design by
-			<a href="http://w3layouts.com"> W3layouts.</a>
-		</p>
-	</div>
-	<!-- //copyright -->
+<!-- copyright -->
+<div class="cpy-right text-center py-3">
+	<p>© 2020 Restaurant Store | Design by
+		<a href="http://w3layouts.com"> W3layouts.</a>
+	</p>
+</div>
+<!-- //copyright -->
 	<!-- move top icon -->
 	<a href="#home" class="move-top text-center">
 		<span class="fa fa-level-up" aria-hidden="true"></span>
 	</a>
 	<!-- //move top icon -->
+</div>
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+	  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+	  crossorigin="anonymous"></script>
+  
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.0/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script type="text/javascript" src="../js/details.js"></script>
 
 </body>
 
