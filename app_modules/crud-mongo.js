@@ -211,3 +211,92 @@ exports.findByName = function(name,callback){
 }
 
 
+
+//gestion des commentaires
+exports.createCommentaire = function(formData, callback) {
+	MongoClient.connect(url, function(err, client) {
+		var db = client.db(dbName);
+
+	    if(!err) {
+	 
+			let toInsert = {
+				name : formData.name,
+				idrestaurant:formData.idrestaurant,
+				email : formData.email,
+				text : formData.text,
+			};
+			console.dir(JSON.stringify(toInsert));
+		    db.collection("commentaires")
+		    .insertOne(toInsert, function(err, result) {
+		    	let reponse;
+
+		        if(!err){
+		            reponse = {
+		                succes : true,
+		                result: result,
+		                error : null,
+		                msg: "Ajout réussi " + result
+		            };
+		        } else {
+		            reponse = {
+		                succes : false,
+		                error : err,
+		                msg: "Problème à l'insertion"
+		            };
+		        }
+		        callback(reponse);
+		    });
+		} else{
+			let reponse = {
+                    	succes: false,
+                        error : err,
+                        msg:"Problème lors de l'insertion, erreur de connexion."
+                    };
+            callback(reponse);
+		}
+	});
+}
+
+
+exports.findAllCommentairesByIdRestaurant = function(id, callback) {
+    MongoClient.connect(url, function(err, client) {
+		var db = client.db(dbName);
+        if(!err) {
+        	// La requete mongoDB
+
+            let myquery = { "_id": ObjectId(id)};
+
+            db.collection("restaurants") 
+            .findOne(myquery, function(err, data) {
+            	let reponse;
+
+                if(!err){
+                    reponse = {
+                    	succes: true,
+                        restaurant : data,
+                        error : null,
+                        msg:"Details du restaurant envoyés"
+                    };
+                } else{
+                    reponse = {
+                    	succes: false,
+                        restaurant : null,
+                        error : err,
+                        msg: "erreur lors du find"
+
+                    };
+                }
+                callback(reponse);
+            });
+        } else {
+        	let reponse = reponse = {
+                    	succes: false,
+                        restaurant : null,
+                        error : err,
+                        msg: "erreur de connexion à la base"
+                    };
+            callback(reponse);
+        }
+    });
+}
+

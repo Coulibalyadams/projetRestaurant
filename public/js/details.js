@@ -26,12 +26,33 @@ var QueryString = function () {
  var app = new Vue({
     el: "#app",
     data: {
+      name: '',
+      email: '',
+      text: '',
+      idrestaurant:'',
       restaurants: [],
+      commentaires:[],
+      commentaire:[],
+      formData:{}
+      
     },
     created() {
       findByName()
     },
     methods: {
+      submit: function(id) {
+        this.idrestaurant=id;
+        this.formData.name=this.name;
+        this.formData.email=this.email;
+        this.formData.text=this.text;
+        this.formData.idrestaurant=this.idrestaurant;
+        createCommentaire();
+        this.name="";
+        this.email="";
+        this.text="";
+        this.idrestaurant="";
+
+      }
     }
   
   });
@@ -44,3 +65,28 @@ var QueryString = function () {
         app.restaurants = json;
       });
   }
+
+  function createCommentaire() {
+    fetch("/api/commentaires/" , {
+        method: "POST",
+        body: JSON.stringify(app.formData),
+        headers:{
+          'Accept':'application/json',
+          'Content-Type':'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(json => {
+        app.commentaires.push(app.formData);
+        console.log(app.commentaires);
+      });
+    }
+
+    function findcommentaires() {
+      fetch("/api/commentaires/:" +id)
+        .then(response => response.json())
+        .then(json => {
+          app.restaurants = json;
+        });
+    }
+

@@ -233,43 +233,52 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								aute irudre dolor in elit sed uta labore dolore reprehender</p>
 						</div>
 
-						<div class="comment-top">
-							<h4>Commentaires</h4>
+						<div class="comment-top" v-if="commentaires">
+							<h4 >Commentaires</h4>
 							
 							<div class="media mt-3">
-								<a class="d-flex pr-3" href="#">
-									<img src="images/te2.jpg" alt="" class="img-fluid" />
-								</a>
+								<span class="d-flex pr-3" >
+									<i class="fa fa-user" aria-hidden="true" style="font-size: 600%; color: gray;"></i>
+								</span>
 								<div class="media-body">
 									<h5 class="mt-0">Richard Spark</h5>
+									
 									<p>Lorem Ipsum convallis diam consequat magna vulputate malesuada. id
 										dignissim sapien velit id felis ac
 										cursus eros.
 										Cras a ornare elit.</p>
 								</div>
 							</div>
+							<div class="media mt-3" v-for="commentaire in commentaires">
+								<span class="d-flex pr-3" >
+									<i class="fa fa-user" aria-hidden="true" style="font-size: 600%;"></i>
+									
+								</span>
+								<div class="media-body" >
+									<i class="glyphicon glyphicon-user"></i>
+									<h5 class="mt-0">{{commentaire.name}}</h5>
+									<p>{{commentaire.text}}</p>
+								</div>
+							</div>
 						</div>
 						<div class="comment-top">
 							<h4>Laisser un commentaire</h4>
 							<div class="comment-bottom">
-								<form action="#" method="post">
+								<form action="#" method="post" v-on:submit.prevent="submit(restaurant._id)">
 									<div class="form-group">
 										<input class="form-control" type="text" name="Name" placeholder="Name"
-											required="">
+											required="" v-model="name">
 									</div>
 									<div class="form-group">
 										<input class="form-control" type="email" name="Email" placeholder="Email"
-											required="">
+											required="" v-model="email">
 									</div>
-									<div class="form-group">
-										<input class="form-control" type="text" name="Subject" placeholder="Subject"
-											required="">
-									</div>
+									
 									<div class="form-group">
 										<textarea class="form-control" name="Message" placeholder="Message..."
-											required=""></textarea>
+											required="" v-model="text"></textarea>
 									</div>
-									<button type="submit" class="btn btn-primary submit">Submit</button>
+									<button type="submit" class="btn btn-primary submit" >Enregistrer</button>
 								</form>
 							</div>
 						</div>

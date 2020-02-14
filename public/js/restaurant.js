@@ -99,7 +99,7 @@ function Delete(id) {
 			center:centerpos,
 			navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
 			mapTypeId: google.maps.MapTypeId.ROADMAP,
-			zoom: 15
+			zoom: 0
 		};
 		
 		// Initialisation de la carte avec les options
@@ -158,14 +158,25 @@ function Delete(id) {
 
         function rechercheProche(restaurants)
         {
+          var i=0;
+          var marker;
 
           restaurants.forEach(element => {
             
             var restoPosition = new google.maps.LatLng(element.address.coord[0], element.address.coord[1]); 
             var distance = google.maps.geometry.spherical.computeDistanceBetween(latlng, restoPosition);
             var distanceKM=distance/1000;
-            if(distanceKM<9337){
+            if(distanceKM<9339){
+              i=i+1;
+              console.log(i);
               console.log(distance);
+              // Ajout d'un marqueur à la position trouvée
+              
+				      marker= new google.maps.Marker({
+					    position: restoPosition,
+					    map: map,
+					    title:element.name
+				      });
               app.restaurantProches.push(element);
             }
           });

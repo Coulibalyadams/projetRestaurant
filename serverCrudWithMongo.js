@@ -146,3 +146,22 @@ app.get("/api/findbyname/:name",function (req,res) {
 		res.send(JSON.stringify(data));
 	});
 })
+
+// Récupération de tous les commentaires d'un restaurant
+app.get('/api/commentaires/:id', function(req, res) {
+	res.type("application/json");
+	var id = req.params.id;
+ 	mongoDBModule.findAllCommentairesByIdRestaurant(id, function(data) {
+ 		res.send(JSON.stringify(data)); 
+ 	});
+ 
+});
+
+
+// Creation d'un commentaire
+// On fera l'insert par un POST, c'est le standard REST
+app.post('/api/commentaires', multerData.fields([]), function(req, res) {
+	mongoDBModule.createCommentaire(req.body, function(data) {
+		res.send(JSON.stringify(data)); 
+	});
+});
